@@ -1,0 +1,100 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = GestionPrestamos2022
+build_property.RootNamespace = GestionPrestamos2022
+build_property.ProjectDir = /home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Consultas/C_ocupaciones.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uc3VsdGFzL0Nfb2N1cGFjaW9uZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Consultas/C_pagos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uc3VsdGFzL0NfcGFnb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Consultas/C_personas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uc3VsdGFzL0NfcGVyc29uYXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Consultas/C_Prestamos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uc3VsdGFzL0NfUHJlc3RhbW9zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Consultas/Estado_Prestamos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uc3VsdGFzL0VzdGFkb19QcmVzdGFtb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Registros/R_Ocupaciones.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0cm9zL1JfT2N1cGFjaW9uZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Registros/R_Pagos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0cm9zL1JfUGFnb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Registros/R_Personas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0cm9zL1JfUGVyc29uYXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Registros/R_prestamos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0cm9zL1JfcHJlc3RhbW9zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0xvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-5wnnanfcr1
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-31f1flkefz
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Areas/Identity/Pages/Account/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,87 @@
+@page "/prestamos"
+@inject PrestamosBLL prestamosBLL;
+
+<EditForm Model="listasp">
+    <DataAnnotationsValidator />
+
+    <div class="card">
+
+        <div class="container">
+
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="input-group mb-4">
+                        <input type="date" @bind="fecha">
+                        <input type="date" @bind="fecha2">
+                        <button @onclick="Buscar" type="button"> <i class="oi oi-magnifying-glass"></i></button>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="button" @onclick="Todos">Todos los Registros</button>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-success table-striped">
+
+                <thead>
+                    <tr>
+                        <th>PrestamosId</th>
+                        <th>Fecha Prestamo</th>
+                        <th>Fecha Vencimiento</th>
+                        <th>Concepto</th>
+                        <th>Monto</th>
+                        <th>Balance</th>
+                        <th>PersonaId</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var prestamo in listasp)
+                    {
+                        <tr>
+                            <td>@prestamo.PrestamoId</td>
+                            <td>@prestamo.Fecha</td>
+                            <td>@prestamo.Vence</td>
+                            <td>@prestamo.Concepto</td>
+                            <td>@prestamo.Monto</td>
+                            <td>@prestamo.Balance</td>
+                            <td>@prestamo.PersonaId</td>
+                            <td><a href="prestamo/@prestamo.PrestamoId">Ver</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</EditForm>
+
+@code
+{
+
+    public DateTime fecha { get; set; } = new DateTime();
+    public DateTime fecha2 { get; set; } = new DateTime();
+    public string Criterio { get; set; } = "";
+    public List<Prestamos> listasp { get; set; } = new List<Prestamos>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        fecha = DateTime.Now;
+        fecha2 = DateTime.Now;
+    }
+
+
+    public async Task Buscar()
+    {
+
+        listasp = await prestamosBLL.Buscarf(fecha, fecha2);
+
+    }
+    public void Todos()
+    {
+        listasp = prestamosBLL.GetList(o => true);
+    }
+
+}

@@ -1,0 +1,73 @@
+@page "/personas"
+@inject PersonasBLL personasBll;
+
+<EditForm Model="listas">
+    <DataAnnotationsValidator />
+
+    <div class="card">
+        <div class="container">
+
+            <div class="card-body">
+                <div class="mb-3">
+                    <input type="text" class="form-control" @bind="Criterio" placeholder="Introduzca un Nombre">
+                    <div class="input-group-append col">
+                        <button type="button" @onclick="Buscar">
+                            <i class="oi oi-magnifying-glass" /> Buscar
+                        </button>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="button" @onclick="Todos">Todos los Registros</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th>PersonaId</th>
+                        <th>Nombres</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th>Balance</th>
+                        <th>OcupacionId</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var personas in listas)
+                    {
+                        <tr>
+                            <td>@personas.PersonaId</td>
+                            <td>@personas.Nombre</td>
+                            <td>@personas.FechaNacimiento</td>
+                            <td>@personas.Email</td>
+                            <td>@personas.Telefono</td>
+                            <td>@personas.Balance</td>
+                            <td>@personas.OcupacionId</td>
+                            <td><a href="persona/@personas.PersonaId">Ver</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</EditForm>
+
+@code
+{
+    public string Criterio { get; set; } = "";
+    public List<Personas> listas { get; set; } = new List<Personas>();
+
+    public async Task Buscar()
+    {
+        listas = await personasBll.BuscarP(Criterio);
+    }
+    public void Todos()
+    {
+        listas = personasBll.GetList(o => true);
+    }
+}

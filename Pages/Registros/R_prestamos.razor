@@ -1,0 +1,211 @@
+@page "/prestamo"
+@page "/prestamo/{PrestamoId:int}"
+
+@inject PersonasBLL PersonasBLL
+@inject NotificationService notificationService
+@inject OcupacionesBLL ocupacionBLL
+@inject PrestamosBLL PrestamosBLL
+
+
+<EditForm Model="prestamos" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro de Prestamos</h3>
+
+        </div>
+
+        <div class="card-body">
+            <form>
+                @*PrestamosId*@
+                <div class="form-row align-items-center">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label>PrestamosId</label>
+                            <div class="input-group">
+                                <InputNumber @bind-Value="prestamos.PrestamoId" class="form-control col-4" />
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-primary input-group-text" @onclick="Buscar">
+                                        <i class="oi oi-magnifying-glass" /> Buscar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*FechaPrestamo*@
+                <div class="mb-3">
+                    <label>Fecha de Inicio</label>
+                    <InputDate @bind-Value="prestamos.Fecha"
+                               class="form-control" />
+                    <ValidationMessage For="@(() => prestamos.Fecha)" />
+                </div>
+                @*FechaVence*@
+                <div class="mb-3">
+                    <label>Fecha De Vencimiento</label>
+                    <InputDate @bind-Value="prestamos.Vence"
+                               class="form-control" />
+                    <ValidationMessage For="@(() => prestamos.Vence)" />
+                </div>
+
+
+                <div class="mb-3 col">
+                    <label>PersonaId</label>
+                    <InputSelect class="form-select" @bind-Value="prestamos.PersonaId">
+                        @foreach (Personas prestamo in listas)
+                        {
+                            <option value="@prestamo.PersonaId">@prestamo.Nombre (ID: @prestamo.PersonaId)</option>
+                        }
+                    </InputSelect>
+                </div>
+
+                @*Concepto*@
+                <div class="mb-3">
+                    <label>Concepto</label>
+                    <InputText @bind-Value="prestamos.Concepto"
+                               class="form-control" />
+                    <ValidationMessage For="@(() => prestamos.Concepto)" />
+                </div>
+
+                @*Monto*@
+                <div class="mb-3">
+                    <label>Monto</label>
+                    <InputNumber @bind-Value="prestamos.Monto" class="form-control" />
+                    <ValidationMessage For="@(() => prestamos.Monto)" />
+                </div>
+                @*Balance*@
+                <div class="mb-3">
+                    <label> Balance</label>
+                    <InputNumber readonly="true" @bind-Value="prestamos.Balance" class="form-control" />
+                    <ValidationMessage For="@(() => prestamos.Balance)" />
+                </div>
+
+            </form>
+        </div>
+        <div class="card-footer">
+            <div class="mb-3 text-center" display: inline-block>
+                <button type="button" class="btn btn-lg btn-primary" @onclick="Nuevo">
+                    <i class="oi oi-file" /> Nuevo
+                </button>
+                <button type="submit" class="btn btn-lg btn-success">
+                    <i class="oi oi-document" /> Guardar
+                </button>
+                <button type="button" class="btn btn-lg btn-danger" @onclick="Eliminar">
+                    <i class="oi oi-trash" /> Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int PrestamoId { get; set; }
+    public Prestamos prestamos { get; set; } = new Prestamos();
+    public String mensaje { get; set; } = "";
+    public DateTime FectaActual { get; set; } = DateTime.Now;
+    public List<Personas> listas { get; set; } = new List<Personas>();
+
+    protected override void OnInitialized()
+    {
+        prestamos.Fecha = DateTime.Now;
+        prestamos.Vence = DateTime.Now;
+ 
+
+        if (PrestamoId > 0)
+        {
+            this.prestamos.PrestamoId = PrestamoId;
+            this.Buscar();
+        }
+        listas = PersonasBLL.GetList(o => true);
+   
+    }
+
+    public void Nuevo()
+    {
+        prestamos = new Prestamos();
+        prestamos.Fecha = DateTime.Now;
+        prestamos.Vence = DateTime.Now;
+    }
+
+    bool Validar()
+    {
+        if (prestamos.Vence.Date > FectaActual.Date)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public async Task Guardar()
+    {
+        bool guardo;
+
+        if (!Validar())
+        {
+            ShowNotification(
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Warning,
+                    Summary = "El prestamo no puede vencer antes de la fecha actual"
+                });
+            return;
+        }
+        guardo = await PrestamosBLL.Guardar(prestamos);
+
+        if (guardo)
+        {
+            ShowNotification(
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Guardado correctamente"
+             });
+            Nuevo();
+
+        }
+
+    }
+    private void Buscar()
+    {
+        if (prestamos.PrestamoId > 0)
+        {
+            var encontrado = PrestamosBLL.Buscar(prestamos.PrestamoId);
+
+            if (encontrado != null)
+                this.prestamos = encontrado;
+
+        }
+    }
+
+    public async Task Eliminar()
+    {
+        bool elimino;
+
+        elimino = await PrestamosBLL.Eliminar(prestamos);
+
+        if (elimino)
+        {
+            ShowNotification(
+           new NotificationMessage
+               {
+                   Severity = NotificationSeverity.Error,
+                   Summary = "Eliminado"
+               });
+
+            Nuevo();
+
+        }
+
+    }
+
+    void ShowNotification(NotificationMessage message)
+    {
+        notificationService.Notify(message);
+
+    }
+}

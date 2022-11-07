@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/GestionPrestamos2022.csproj": {}
+    "/home/frank03/Mis Cosas/AppBlazor/GestionPrestamos2022/GestionPrestamos2022.csproj": {}
   },
   "projects": {
-    "/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/GestionPrestamos2022.csproj": {
+    "/home/frank03/Mis Cosas/AppBlazor/GestionPrestamos2022/GestionPrestamos2022.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/GestionPrestamos2022.csproj",
+        "projectUniqueName": "/home/frank03/Mis Cosas/AppBlazor/GestionPrestamos2022/GestionPrestamos2022.csproj",
         "projectName": "GestionPrestamos2022",
-        "projectPath": "/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/GestionPrestamos2022.csproj",
+        "projectPath": "/home/frank03/Mis Cosas/AppBlazor/GestionPrestamos2022/GestionPrestamos2022.csproj",
         "packagesPath": "/home/frank03/.nuget/packages/",
-        "outputPath": "/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/obj/",
+        "outputPath": "/home/frank03/Mis Cosas/AppBlazor/GestionPrestamos2022/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/frank03/.nuget/NuGet/NuGet.Config"

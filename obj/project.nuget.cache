@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AZ5ATNuZ3GSQRuXee6R5FLCxN9ldPp5YKqsBnU2QIu+MJT0iN4fkbm75lbAH4bbQL8RoTVvrnssljhg/nKA/hg==",
+  "dgSpecHash": "jKyQalfXAOpm0yvSWgkCwlgky5QjB2jyEfKCd+GDQSgf1gyrMg8ThT7kkmAurVHtz6nQI2kzF4SQpRg/NaWWqQ==",
   "success": true,
-  "projectFilePath": "/home/frank03/Mis Cosas/AppBlazor/Gestion-de-Prestamos-Personales/GestionPrestamos2022.csproj",
+  "projectFilePath": "/home/frank03/Mis Cosas/AppBlazor/GestionPrestamos2022/GestionPrestamos2022.csproj",
   "expectedPackageFiles": [
     "/home/frank03/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/frank03/.nuget/packages/libsassbuilder/2.0.1/libsassbuilder.2.0.1.nupkg.sha512",
